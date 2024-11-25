@@ -3,7 +3,9 @@ require('dotenv/config');
 const { Client } = require('pg');
 const { argv } = require('node:process');
 
-const connectionString = argv[2];
+const connectionString =
+  argv[2] ||
+  `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
 const SQL = `
 CREATE TABLE IF NOT EXISTS top_gameinv.genre(
   genre_id INTEGER GENERATED ALWAYS AS IDENTITY,
