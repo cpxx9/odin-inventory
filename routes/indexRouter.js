@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const { displayCategories } = require('../controllers/indexController');
+const { displayGenres } = require('../controllers/indexController');
 
 const indexRouter = Router();
 
-indexRouter.get('/', displayCategories);
+indexRouter.get('/', displayGenres);
 
 module.exports = {
   indexRouter,

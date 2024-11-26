@@ -4,11 +4,11 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <% if (locals.categories) { %>
+    <% if (locals.genres) { %>
     <ul>
-      <% categories.forEach(category => { %>
+      <% genres.forEach(genre => { %>
       <li>
-        <a href=<%= `/category/${category.genre}` %>><button><%= category.genre %></button></a>
+        <a href=<%= `/genre/${genre.genre}` %>><button><%= genre.genre %></button></a>
       </li>
       <% }); %>
     </ul>

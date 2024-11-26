@@ -9,13 +9,13 @@ const connectionString =
 const SQL = `
 CREATE TABLE IF NOT EXISTS genre(
   genre_id INTEGER GENERATED ALWAYS AS IDENTITY,
-  genre VARCHAR ( 100 ),
+  genre VARCHAR ( 100 ) UNIQUE,
   CONSTRAINT genre_pkey PRIMARY KEY (genre_id)
 );
 
 CREATE TABLE IF NOT EXISTS studio(
   studio_id INTEGER GENERATED ALWAYS AS IDENTITY,
-  studio VARCHAR ( 255 ),
+  studio VARCHAR ( 255 ) UNIQUE,
   CONSTRAINT studio_pkey PRIMARY KEY (studio_id)
 );
 

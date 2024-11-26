@@ -1,10 +1,10 @@
-const { getAllCategories } = require('../models/queries');
+const { getAllGenres } = require('../models/queries');
 
-const displayCategories = async (req, res) => {
-  const categories = await getAllCategories();
-  res.render('index', { title: 'Best Games', categories });
+const displayGenres = async (req, res) => {
+  const genres = await getAllGenres();
+  res.render('index', { title: 'Best Games', genres });
 };
 
 module.exports = {
-  displayCategories,
+  displayGenres,
 };
