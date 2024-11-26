@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS genre(
 
 CREATE TABLE IF NOT EXISTS studio(
   studio_id INTEGER GENERATED ALWAYS AS IDENTITY,
-  title VARCHAR ( 255 ),
+  studio VARCHAR ( 255 ),
   CONSTRAINT studio_pkey PRIMARY KEY (studio_id)
 );
 
