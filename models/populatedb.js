@@ -52,6 +52,18 @@ CREATE TABLE IF NOT EXISTS game_genre(
       ON UPDATE CASCADE
       ON DELETE RESTRICT
 );
+
+INSERT INTO genre (genre)
+VALUES
+  ('RPG'),
+  ('Borderlands'),
+  ('Strategy');
+
+INSERT INTO game (title)
+VALUES
+  ('Alan Wake'),
+  ('Call of Duty'),
+  ('Pokemon');
 `;
 
 async function main() {
