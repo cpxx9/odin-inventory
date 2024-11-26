@@ -1,5 +1,6 @@
 const displayCategory = async (req, res) => {
-  res.render('category', { title: 'Category' });
+  const { genre } = req.params;
+  res.render('category', { genre });
 };
 
 module.exports = {

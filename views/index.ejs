@@ -7,7 +7,9 @@
     <% if (locals.categories) { %>
     <ul>
       <% categories.forEach(category => { %>
-      <li><%= category.genre %></li>
+      <li>
+        <a href=<%= `/category/${category.genre}` %>><button><%= category.genre %></button></a>
+      </li>
       <% }); %>
     </ul>
     <% } %>

@@ -3,7 +3,7 @@ const { displayCategory } = require('../controllers/categoryController');
 
 const categoryRouter = Router();
 
-categoryRouter.get('/', displayCategory);
+categoryRouter.get('/:genre', displayCategory);
 
 module.exports = {
   categoryRouter,
