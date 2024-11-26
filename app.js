@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
 app.use('/', indexRouter);
-app.use('category', categoryRouter);
+app.use('/category', categoryRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
