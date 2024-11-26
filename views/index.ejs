@@ -4,5 +4,12 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <% if (locals.categories) { %>
+    <ul>
+      <% categories.forEach(category => { %>
+      <li><%= category.genre %></li>
+      <% }); %>
+    </ul>
+    <% } %>
   </body>
 </html>
