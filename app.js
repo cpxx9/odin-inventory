@@ -3,6 +3,7 @@ require('dotenv/config');
 const path = require('node:path');
 const express = require('express');
 const { indexRouter } = require('./routes/indexRouter');
+const { categoryRouter } = require('./routes/categoryRouter');
 
 const assetsPath = path.join(__dirname, 'views');
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
 app.use('/', indexRouter);
+app.use('category', categoryRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
