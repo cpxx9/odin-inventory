@@ -29,8 +29,14 @@ async function getGamesFromGenre(genreId) {
   return rows;
 }
 
+async function getGameInfo(gameId) {
+  // to build upon
+  return gameId;
+}
+
 module.exports = {
   getAllGenres,
   getGenre,
   getGamesFromGenre,
+  getGameInfo,
 };
