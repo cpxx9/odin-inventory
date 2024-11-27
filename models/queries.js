@@ -5,7 +5,15 @@ async function getAllGenres() {
   return rows;
 }
 
-async function getGenre(genre = '%') {
+async function getGenre(genreId) {
+  const { rows } = await pool.query(
+    'SELECT genre.genre FROM genre WHERE genre.genre_id = $1',
+    [genreId]
+  );
+  return rows[0].genre;
+}
+
+async function getGamesFromGenre(genreId) {
   const { rows } = await pool.query(
     `
     SELECT game.title, game.game_id
@@ -13,9 +21,10 @@ async function getGenre(genre = '%') {
     LEFT JOIN game_genre
     ON game_genre.genre_id = genre.genre_id
     INNER JOIN game
-    ON game.game_id = game_genre.game_id WHERE genre.genre LIKE $1
+    ON game.game_id = game_genre.game_id 
+    WHERE genre.genre_id = $1
   `,
-    [genre]
+    [genreId]
   );
   return rows;
 }
@@ -23,4 +32,5 @@ async function getGenre(genre = '%') {
 module.exports = {
   getAllGenres,
   getGenre,
+  getGamesFromGenre,
 };

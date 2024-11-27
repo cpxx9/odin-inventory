@@ -3,7 +3,7 @@ const { displayGenre } = require('../controllers/genreController');
 
 const genreRouter = Router();
 
-genreRouter.get('/:genre', displayGenre);
+genreRouter.get('/:genreId', displayGenre);
 
 module.exports = {
   genreRouter,
