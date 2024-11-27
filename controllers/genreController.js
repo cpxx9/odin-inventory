@@ -1,4 +1,8 @@
-const { getGamesFromGenre, getGenre } = require('../models/queries');
+const {
+  getGamesFromGenre,
+  getGenre,
+  createNewGenre,
+} = require('../models/queries');
 
 const displayGenre = async (req, res) => {
   const { genreId } = req.params;
@@ -7,6 +11,13 @@ const displayGenre = async (req, res) => {
   res.render('genre', { genre, queryGenreGames });
 };
 
+const createGenre = async (req, res) => {
+  const { newGenre } = req.body;
+  await createNewGenre(newGenre);
+  res.redirect('/');
+};
+
 module.exports = {
   displayGenre,
+  createGenre,
 };
