@@ -56,10 +56,16 @@ async function createGenre(genre) {
   ]);
 }
 
+async function deleteGenre(genreId) {
+  await pool.query('DELETE FROM game_genre WHERE genre_id = $1', [genreId]);
+  await pool.query('DELETE FROM genre WHERE genre_id = $1', [genreId]);
+}
+
 module.exports = {
   getAllGenres,
   getGenre,
   getGamesFromGenre,
   getGameInfo,
   createGenre,
+  deleteGenre,
 };

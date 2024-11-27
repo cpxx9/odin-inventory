@@ -15,7 +15,7 @@ const createGenre = async (req, res) => {
 
 const deleteGenre = async (req, res) => {
   const { deletedGenre } = req.body;
-  console.log(deletedGenre);
+  await db.deleteGenre(deletedGenre);
   res.redirect('/');
 };
 
