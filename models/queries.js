@@ -32,7 +32,7 @@ async function getGamesFromGenre(genreId) {
 async function getGameInfo(gameId) {
   const { rows } = await pool.query(
     `
-    SELECT game.title, json_agg(genre.genre) as genres, json_agg(studio.studio) as studios
+    SELECT game.title, json_agg(DISTINCT genre.genre) as genres, json_agg(DISTINCT studio.studio) as studios
     FROM game
     INNER JOIN game_genre
     ON game.game_id = game_genre.game_id
