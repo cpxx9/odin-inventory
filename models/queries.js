@@ -50,7 +50,7 @@ async function getGameInfo(gameId) {
   return rows[0];
 }
 
-async function createNewGenre(genre) {
+async function createGenre(genre) {
   await pool.query('INSERT INTO genre (genre) VALUES ($1)', [
     genre.toLowerCase(),
   ]);
@@ -61,5 +61,5 @@ module.exports = {
   getGenre,
   getGamesFromGenre,
   getGameInfo,
-  createNewGenre,
+  createGenre,
 };
