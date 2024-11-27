@@ -12,9 +12,9 @@
       <input type="text" name="newGenre" id="newGenre">
       <button type="submit">Create</button>
     </form>
-    <form onsubmit="return confirm('This will remove genre from all attached games. Are you sure?');" action="/genre" method="POST">
-      <label for="deleteGenre">Delete genre:</label>
-      <select name="deleteGenre" id="deleteGenre">
+    <form onsubmit="return confirm('This will remove genre from all attached games. Are you sure?');" action="/genre/delete" method="POST">
+      <label for="deletedGenre">Delete genre:</label>
+      <select name="deletedGenre" id="deletedGenre">
         <% genres.forEach(genre => { %>
           <option value=<%= `${genre.genre_id}` %>><%= genre.genre %></option>
         <% }); %>

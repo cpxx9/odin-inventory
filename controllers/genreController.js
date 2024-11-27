@@ -17,7 +17,14 @@ const createGenre = async (req, res) => {
   res.redirect('/');
 };
 
+const deleteGenre = async (req, res) => {
+  const { deletedGenre } = req.body;
+  console.log(deletedGenre);
+  res.redirect('/');
+};
+
 module.exports = {
   displayGenre,
   createGenre,
+  deleteGenre,
 };
