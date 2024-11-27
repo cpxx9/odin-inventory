@@ -3,7 +3,7 @@ const { displayGame } = require('../controllers/gameController');
 
 const gameRouter = Router();
 
-gameRouter.get('/:game', displayGame);
+gameRouter.get('/:gameId', displayGame);
 
 module.exports = {
   gameRouter,
