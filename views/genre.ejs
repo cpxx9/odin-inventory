@@ -4,5 +4,15 @@
   </head>
   <body>
     <h1><%= genre %></h1>
+    <% if (locals.queryGenre) { %>
+    <ul>
+      <% queryGenre.forEach(result => { %>
+      <li>
+        <p><%= result.title %></p>
+        <a href="">More info</a>
+      </li>
+      <% }); %>
+    </ul>
+    <% } %>
   </body>
 </html>
