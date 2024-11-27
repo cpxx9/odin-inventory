@@ -8,7 +8,7 @@ async function getAllGenres() {
 async function getGenre(genre = '%') {
   const { rows } = await pool.query(
     `
-    SELECT game.title, game.id
+    SELECT game.title, game.game_id
     FROM genre
     LEFT JOIN game_genre
     ON game_genre.genre_id = genre.genre_id

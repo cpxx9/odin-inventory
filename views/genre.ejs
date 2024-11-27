@@ -9,7 +9,7 @@
       <% queryGenre.forEach(result => { %>
       <li>
         <p><%= result.title %></p>
-        <a href=<%= `/game/${result.id}` %>>More info</a>
+        <a href=<%= `/game/${result.game_id}` %>>More info</a>
       </li>
       <% }); %>
     </ul>
