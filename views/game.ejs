@@ -1,8 +1,27 @@
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title><%= queryGameInfo.title %></title>
   </head>
   <body>
     <h1><%= queryGameInfo.title %></h1>
+    <h3>Genre:</h3>
+    <ul>
+      <% queryGameInfo.genres.forEach(genre => { %>
+      <li>
+        <p><%= genre %></p>
+      </li>
+      <% }); %>
+    </ul>
+    <h3>Studio:</h3>
+    <ul>
+      <% queryGameInfo.studios.forEach(studio => { %>
+      <li>
+        <p><%= studio %></p>
+      </li>
+      <% }); %>
+    </ul>
   </body>
 </html>
