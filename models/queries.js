@@ -47,7 +47,7 @@ async function getGameInfo(gameId) {
     `,
     [gameId]
   );
-  return rows;
+  return rows[0];
 }
 
 module.exports = {
