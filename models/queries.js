@@ -30,8 +30,24 @@ async function getGamesFromGenre(genreId) {
 }
 
 async function getGameInfo(gameId) {
-  // to build upon
-  return gameId;
+  const { rows } = await pool.query(
+    `
+    SELECT game.title, json_agg(genre.genre), json_agg(studio.studio)
+    FROM game
+    INNER JOIN game_genre
+    ON game.game_id = game_genre.game_id
+    INNER JOIN genre
+    ON genre.genre_id = game_genre.genre_id
+    INNER JOIN game_studio
+    ON game.game_id = game_studio.game_id
+    INNER JOIN studio
+    on studio.studio_id = game_studio.studio_id
+    WHERE game.game_id = $1
+    GROUP BY game.title
+    `,
+    [gameId]
+  );
+  return rows;
 }
 
 module.exports = {
